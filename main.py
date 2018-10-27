@@ -34,6 +34,7 @@ def load_vgg(sess, vgg_path):
     vgg_layer4_out_tensor_name = 'layer4_out:0'
     vgg_layer7_out_tensor_name = 'layer7_out:0'
     
+    tf.saved_model.loader.load(sess, 
     return None, None, None, None, None
 tests.test_load_vgg(load_vgg, tf)
 
