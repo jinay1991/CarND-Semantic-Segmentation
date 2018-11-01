@@ -25,6 +25,8 @@ The goal of this project is to construct a fully convolutional neural network ba
 
    Yes, project trains neural network for KITTI Dataset for `epoch=25` with `batch_size=8`, `learning_rate=0.0001` and `l2_regularizer=1e-3`. After training for `25 epochs`, average loss was recorded to be `~0.035`. Implemneted in `main.py` [line 167](https://github.com/jinay1991/CarND-Semantic-Segmentation/blob/master/main.py#L167), [line 62](https://github.com/jinay1991/CarND-Semantic-Segmentation/blob/master/main.py#L62) and [line 147](https://github.com/jinay1991/CarND-Semantic-Segmentation/blob/master/main.py#L147).
 
+   To train network I have used Google Cloud Compute Engine with 8 CPU, 52GB RAM and NVIDIA P100 configuration, which took ~5 mins for training for 25 epochs.
+
 #### Neural Network Training
 
 1. Does the project train the model correctly?
