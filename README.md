@@ -9,21 +9,26 @@ The goal of this project is to construct a fully convolutional neural network ba
 #### Build the Neural Network
 
 1. Does the project load the pretrained vgg model?
+
    Yes, project is loading pretrained `VGG` model which can be found [here](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/vgg.zip).
    Implemented in `main.py` [line 21](https://github.com/jinay1991/CarND-Semantic-Segmentation/blob/master/main.py#L21)
 
 2. Does the project learn the correct features from the images?
+
    Yes, project learns correct features from the images to segment road pixels correctly. Implemented in `main.py` [line 49](https://github.com/jinay1991/CarND-Semantic-Segmentation/blob/master/main.py#L49)
 
 3. Does the project optimize the neural network?
+
    Yes, project uses Adams Optimizer for optimising and minimizing loss for the neural networks. Implemented in `main.py` [line 100](https://github.com/jinay1991/CarND-Semantic-Segmentation/blob/master/main.py#L100)
 
 4. Does the project train the neural network?
+
    Yes, project trains neural network for KITTI Dataset for `epoch=25` with `batch_size=8`, `learning_rate=0.0001` and `l2_regularizer=1e-3`. After training for `25 epochs`, average loss was recorded to be `~0.035`. Implemneted in `main.py` [line 167](https://github.com/jinay1991/CarND-Semantic-Segmentation/blob/master/main.py#L167), [line 62](https://github.com/jinay1991/CarND-Semantic-Segmentation/blob/master/main.py#L62) and [line 147](https://github.com/jinay1991/CarND-Semantic-Segmentation/blob/master/main.py#L147).
 
 #### Neural Network Training
 
 1. Does the project train the model correctly?
+
    Yes, model loss decreases with every epochs. Initial loss for model was `1.490` which was reduced to `0.079` after `12 epochs` and further reduced to `0.35` after `25 epochs`.
 
    Also, by looking at the resultant images, it performs segmentation of road pixels correctly.
@@ -38,6 +43,7 @@ The goal of this project is to construct a fully convolutional neural network ba
    Logs for training is available as [training.log](https://github.com/jinay1991/CarND-Semantic-Segmentation/blob/master/training.log).
 
 2. Does the project use reasonable hyperparameters?
+
    Yes. Project uses following hyperparameters to correctly train a model.
 
     | Hyperparameter     | Value  |
@@ -49,6 +55,7 @@ The goal of this project is to construct a fully convolutional neural network ba
     | Learning Rate      | 0.0001 |
 
 3. Does the project correctly label the road?
+
    Yes. Project implements loading of correct label in `main.py` at [line 147](https://github.com/jinay1991/CarND-Semantic-Segmentation/blob/master/main.py#L147)
 
 # Udacity provided README.md
