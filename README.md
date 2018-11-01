@@ -48,13 +48,14 @@ The goal of this project is to construct a fully convolutional neural network ba
 
    Yes. Project uses following hyperparameters to correctly train a model.
 
-    | Hyperparameter     | Value  |
-    | ------------------ | ------ |
-    | Batch Size         | 8      |
-    | Epochs             | 25     |
-    | L2 Regularization  | 1e-3   |
-    | Standard Deviation | 0.01   |
-    | Learning Rate      | 0.0001 |
+    | Hyperparameter      | Value  |
+    | ------------------- | ------ |
+    | Batch Size          | 8      |
+    | Epochs              | 25     |
+    | L2 Regularization   | 1e-3   |
+    | Standard Deviation  | 0.01   |
+    | Learning Rate       | 0.0001 |
+    | Dropout Probability | 0.5    |
 
 3. Does the project correctly label the road?
 
