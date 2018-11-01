@@ -1,6 +1,10 @@
 # Semantic Segmentation
 
-### Project Rubric
+### Introduction
+
+The goal of this project is to construct a fully convolutional neural network based on the VGG-16 image classifier architecture for performing semantic segmentation to label the pixels of a road in images.
+
+### Project [Rubric](https://review.udacity.com/#!/rubrics/989/view)
 
 #### Build the Neural Network
 
@@ -31,7 +35,7 @@
    ![image3](runs/1541076977.1332216/um_000090.png)
    ![image4](runs/1541076977.1332216/um_000067.png)
 
-   Logs for training is available as `training.log`.
+   Logs for training is available as [training.log](https://github.com/jinay1991/CarND-Semantic-Segmentation/blob/master/training.log).
 
 2. Does the project use reasonable hyperparameters?
    Yes. Project uses following hyperparameters to correctly train a model.
@@ -45,7 +49,9 @@
     | Learning Rate      | 0.0001 |
 
 3. Does the project correctly label the road?
-   Yes. Project implements loading of correct label in `main.py` at (line 147)[https://github.com/jinay1991/CarND-Semantic-Segmentation/blob/master/main.py#L147]
+   Yes. Project implements loading of correct label in `main.py` at [line 147](https://github.com/jinay1991/CarND-Semantic-Segmentation/blob/master/main.py#L147)
+
+# Udacity provided README.md
 
 ### Introduction
 In this project, you'll label the pixels of a road in images using a Fully Convolutional Network (FCN).
