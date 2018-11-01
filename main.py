@@ -17,6 +17,15 @@ if not tf.test.gpu_device_name():
 else:
     print('Default GPU Device: {}'.format(tf.test.gpu_device_name()))
 
+# --------------------
+#  Set Hyperparameters
+# --------------------
+EPOCHS = 25
+BATCH_SIZE = 8
+L2_REGULARIZER = 1e-3
+STDDEV = 0.01
+LEARNING_RATE = 0.0001
+DROPOUT_PROB = 0.5
 
 def load_vgg(sess, vgg_path):
     """
@@ -53,12 +62,6 @@ def layers(vgg_layer3_out, vgg_layer4_out, vgg_layer7_out, num_classes):
     :param num_classes: Number of classes to classify
     :return: The Tensor for the last layer of output
     """
-    # -----------------------------------------------------------
-    #  Set Hyperparameters - (Standard Deviation, L2 Regularizer)
-    # -----------------------------------------------------------
-    L2_REGULARIZER=1e-3
-    STDDEV=0.01
-
     layer7a_out = tf.layers.conv2d(vgg_layer7_out, num_classes, 1,
                                    padding= 'same',
                                    kernel_initializer= tf.random_normal_initializer(stddev=STDDEV),
@@ -138,12 +141,6 @@ def train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_l
     :param keep_prob: TF Placeholder for dropout keep probability
     :param learning_rate: TF Placeholder for learning rate
     """
-    # ---------------------------------------------
-    #  Set Hyperparameters (Learning Rate, Dropout)
-    # ---------------------------------------------
-    LEARNING_RATE=0.0001
-    DROPOUT_PROB=0.5
-
     sess.run(tf.global_variables_initializer())
 
     print("Training...")
@@ -169,12 +166,6 @@ def run():
     # Download pretrained vgg model
     helper.maybe_download_pretrained_vgg(data_dir)
 
-    # ----------------------------------------
-    #  Set Hyperparameter (Ephoch, Batch Size)
-    # ----------------------------------------
-    epochs = 25
-    batch_size = 8
-
     correct_label = tf.placeholder(tf.int32, [None, None, None, num_classes], name='correct_label')
     learning_rate = tf.placeholder(tf.float32, name='learning_rate')
 
@@ -188,7 +179,7 @@ def run():
         nn_last_layer = layers(vgg_layer3_out, vgg_layer4_out, vgg_layer7_out, num_classes)
         logits, train_op, cross_entropy_loss = optimize(nn_last_layer, correct_label, learning_rate, num_classes)
 
-        train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_loss, input_image,
+        train_nn(sess, EPOCHS, BATCH_SIZE, get_batches_fn, train_op, cross_entropy_loss, input_image,
                  correct_label, keep_prob, learning_rate)
 
         helper.save_inference_samples(runs_dir, data_dir, sess, image_shape, logits, keep_prob, input_image)
