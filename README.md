@@ -28,7 +28,7 @@
 
    ![image1](runs/1541076977.1332216/um_000007.png)
    ![image2](runs/1541076977.1332216/um_000008.png)
-   ![image3](runs/1541076977.1332216/um_000097.png)
+   ![image3](runs/1541076977.1332216/um_000090.png)
    ![image4](runs/1541076977.1332216/um_000067.png)
 
    Logs for training is available as `training.log`.
